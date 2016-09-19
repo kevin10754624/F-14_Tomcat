@@ -1,6 +1,6 @@
 //Maya ASCII 2017 scene
 //Name: F-14_tomcat.ma
-//Last modified: Mon, Sep 19, 2016 12:49:38 PM
+//Last modified: Mon, Sep 19, 2016 12:51:18 PM
 //Codeset: UTF-8
 requires maya "2017";
 currentUnit -l centimeter -a degree -t film;
@@ -13,13 +13,13 @@ fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "8DC23AA0-A645-E278-6357-5097A0DE4A95";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 6.1451839935312673 20.277121124919457 3.8218077634729344 ;
-	setAttr ".r" -type "double3" 660.26164732018708 2924.9999999988427 0 ;
+	setAttr ".t" -type "double3" 7.0305957072000886 18.06906645516343 6.2454903036412119 ;
+	setAttr ".r" -type "double3" 671.06164732003219 2919.3999999987186 -8.2319567584208042e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6E66F31F-5640-94DB-2DCA-4189F9C2A8F5";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 17.369915390951061;
+	setAttr ".coi" 16.969311057913597;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -191,7 +191,7 @@ createNode mesh -n "pasted__pCubeShape3" -p "pasted__pCube3";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.51090776920318604 0.75000005960464478 ;
+	setAttr ".pv" -type "double2" 0.4336489737033844 0.82906633615493774 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -2624,6 +2624,36 @@ createNode polySplit -n "polySplit156";
 	setAttr -s 3 ".d[0:2]"  -2147483177 -2147483469 -2147483470;
 	setAttr ".sma" 180;
 	setAttr ".m2015" yes;
+createNode polySplit -n "polySplit157";
+	rename -uid "D074C841-2D42-8624-73F9-579A442F12F1";
+	setAttr -s 5 ".e[0:4]"  0.44485801 0.41416401 0.40880001 0.38189301
+		 0.38026401;
+	setAttr -s 5 ".d[0:4]"  -2147483593 -2147483576 -2147483596 -2147483579 -2147483590;
+	setAttr ".sma" 180;
+	setAttr ".m2015" yes;
+createNode polySplit -n "polySplit158";
+	rename -uid "64819DFB-3C4E-7D8B-AD0E-94B9E279E512";
+	setAttr ".v[0]" -type "float3"  -0.120345 0.50000399 -0.57808602;
+	setAttr -s 7 ".e[0:6]"  1 11 0.37718701 0.62354499 0.35675201 0.35573399
+		 0.33362499;
+	setAttr -s 7 ".d[0:6]"  -2147483590 0 -2147483583 -2147483611 -2147483573 -2147483607 
+		-2147483602;
+	setAttr ".sma" 180;
+	setAttr ".m2015" yes;
+createNode polySplit -n "polySplit159";
+	rename -uid "C91DD086-BA4B-58EC-3FCD-198595AF39F6";
+	setAttr -s 5 ".e[0:4]"  0.54291499 0.45584199 0.55351901 0.45383599
+		 0.56367397;
+	setAttr -s 5 ".d[0:4]"  -2147483638 -2147483628 -2147483611 -2147483625 -2147483608;
+	setAttr ".sma" 180;
+	setAttr ".m2015" yes;
+createNode polySplit -n "polySplit160";
+	rename -uid "06673B39-6942-DC81-C5DD-10A3A8051092";
+	setAttr -s 6 ".e[0:5]"  0 0.42968401 0.59069502 0.38219801 0.63493198
+		 0.67088002;
+	setAttr -s 6 ".d[0:5]"  -2147483581 -2147483622 -2147483605 -2147483619 -2147483602 -2147483637;
+	setAttr ".sma" 180;
+	setAttr ".m2015" yes;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -2662,8 +2692,8 @@ connectAttr "groupParts2.og" "pCubeShape2.i";
 connectAttr "groupId3.id" "pCubeShape2.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "pCubeShape2.iog.og[0].gco";
 connectAttr "groupId4.id" "pCubeShape2.ciog.cog[0].cgid";
-connectAttr "polySplit154.out" "pCubeShape3.i";
-connectAttr "polySplit144.out" "pasted__pCubeShape3.i";
+connectAttr "polySplit158.out" "pCubeShape3.i";
+connectAttr "polySplit160.out" "pasted__pCubeShape3.i";
 connectAttr "polySplit99.out" "pCubeShape4.i";
 connectAttr "polySplit98.out" "pasted__pCubeShape4.i";
 connectAttr "polySplit104.out" "pCubeShape5.i";
@@ -2982,6 +3012,10 @@ connectAttr "polyTweak57.out" "polySplit154.ip";
 connectAttr "polySplit125.out" "polyTweak58.ip";
 connectAttr "polyTweak58.out" "polySplit155.ip";
 connectAttr "polySplit155.out" "polySplit156.ip";
+connectAttr "polySplit154.out" "polySplit157.ip";
+connectAttr "polySplit157.out" "polySplit158.ip";
+connectAttr "polySplit144.out" "polySplit159.ip";
+connectAttr "polySplit159.out" "polySplit160.ip";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "pCubeShape3.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pasted__pCubeShape3.iog" ":initialShadingGroup.dsm" -na;
