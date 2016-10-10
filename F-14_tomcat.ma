@@ -1,6 +1,6 @@
 //Maya ASCII 2017 scene
 //Name: F-14_tomcat.ma
-//Last modified: Mon, Oct 10, 2016 12:43:22 PM
+//Last modified: Mon, Oct 10, 2016 12:48:11 PM
 //Codeset: UTF-8
 requires maya "2017";
 currentUnit -l centimeter -a degree -t film;
@@ -13,14 +13,14 @@ fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "8DC23AA0-A645-E278-6357-5097A0DE4A95";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 3.4490136370487177 24.549157871070427 -32.879762206050671 ;
-	setAttr ".r" -type "double3" 4298.6616476388699 17453.799999993349 0 ;
+	setAttr ".t" -type "double3" 24.016716400824102 32.032593963076138 7.8013993613681762 ;
+	setAttr ".r" -type "double3" 4281.8616476375673 17350.199999991706 9.3894261318056402e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6E66F31F-5640-94DB-2DCA-4189F9C2A8F5";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 34.582999662105102;
+	setAttr ".coi" 32.494392791466566;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -874,7 +874,7 @@ createNode mesh -n "pCubeShape6" -p "pCube7";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 6 ".pt";
+	setAttr -s 2 ".pt";
 	setAttr ".pt[93]" -type "float3" -7.4505806e-09 0 0 ;
 	setAttr ".pt[99]" -type "float3" -7.4505806e-09 0 0 ;
 	setAttr -s 142 ".vt[0:141]"  -0.58325851 -0.16448784 0.5001173 0.57492602 -0.1876688 0.5
@@ -7239,22 +7239,22 @@ createNode mesh -n "pCubeShape9" -p "pCube9";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".bw" 3;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "3CF0201A-1C4E-4DB6-E31A-B8A8322CB840";
+	rename -uid "77454C1C-A44B-9AAE-56D4-E996C5339A51";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "446393E5-174B-F530-D58F-70AA25EBFF03";
+	rename -uid "F71D3CC5-C641-A676-1D2B-F7879A18C2DC";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "074E2847-3A4B-6C08-E053-2A9C03C340AF";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "57E8E3AA-7B4C-5316-9E86-BE8C06057386";
+	rename -uid "35DB9A0E-534F-0B93-70E2-8194FF866F6E";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "C68B0BD2-1E47-C8A7-CBBE-A1962A38734D";
 	setAttr ".g" yes;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "F8E6E5E7-5D40-C627-8F91-149B1102FB08";
+	rename -uid "3FF86784-7B48-A0C6-D319-4290B88381ED";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "1F8697F9-B548-AF75-1D65-A0BE680D7EFA";
+	rename -uid "B8D33892-D646-9A40-919E-BF9C85926683";
 createNode script -n "uiConfigurationScriptNode";
 	rename -uid "84A71CD0-2749-BF29-99F4-F89951FC39A1";
 	setAttr ".b" -type "string" (
@@ -7847,8 +7847,6 @@ select -ne :defaultResolution;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "polySplit4.out" "polySurfaceShape9.i";
 connectAttr "groupId33.id" "polySurfaceShape9.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape9.iog.og[0].gco";
